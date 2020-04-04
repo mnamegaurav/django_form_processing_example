@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>form</title>
+
+</head>
+<body>
+    <a href="{% url 'home' %}"><button type="button">HOME</button></a>
+    <a href="{% url 'forms_processing' %}"><button type="button">FORMS</button></a>
+    <a href="{% url 'model_forms_processing' %}"><button type="button">MODEL FORMS</button></a>
+
+    <div>
+        <h2>Django Forms but Still using django.forms for form generation</h2>
+        <form id="form-input" method="post" action="forms_processing" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+        <button type="submit">Submit</button>
+        </form>
+    </div>
+
+</body>
+</html>

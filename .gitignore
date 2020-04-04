@@ -1,0 +1,6 @@
+media/
+static/
+db.sqlite3
+form_app/migrations/*
+form_app/__pycache__/*
+form_processing/__pycache__/*
