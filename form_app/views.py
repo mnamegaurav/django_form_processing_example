@@ -9,7 +9,7 @@ def home(request):
         name = request.POST.get('name')
         email = request.POST.get('email')
         password = request.POST.get('password')
-        file = request.POST.get('file')
+        file = request.FILES['file']
         FormData.objects.create(name=name,email=email,password=password,file=file)
         return HttpResponse('Success')
     else:
