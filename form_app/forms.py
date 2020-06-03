@@ -6,11 +6,8 @@ class PracticeForm(forms.Form):
 
     name = forms.CharField(max_length=100)
     email = forms.EmailField(required=True)
-    password = forms.CharField(max_length=10)
+    password = forms.CharField(max_length=10,widget=forms.PasswordInput())
     file = forms.FileField()
-    widgets = {
-            'password': forms.PasswordInput(),
-        }
 
 
 class PracticeModelForm(forms.ModelForm):

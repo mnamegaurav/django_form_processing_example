@@ -1,24 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>form</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+{% extends 'base.html' %}
+{% block body_ %}
 
-</head>
-<body>
-    <a href="{% url 'home' %}"><button type="button">HOME</button></a>
-    <a href="{% url 'forms_processing' %}"><button type="button">FORMS</button></a>
-    <a href="{% url 'model_forms_processing' %}"><button type="button">MODEL FORMS</button></a>
-
-    <div>
-        <h2>Form submission through ajax but Still using django.forms for form generation</h2>
-        <form id="ajax-form-input" method="post" action="" enctype="multipart/form-data">
-            {% csrf_token %}
-            {{ ajax_form.as_p }}
-        <button type="submit">Submit</button>
-        </form>
-    </div>
-
+<div>
+    <h2>Form submission through ajax but Still using django.forms for form generation</h2>
+    <form id="ajax-form-input" method="post" action="" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ ajax_form.as_p }}
+    <button type="submit">Submit</button>
+    </form>
+</div>
 
 <script type="text/javascript">
 $(document).ready(function(){
@@ -40,5 +30,5 @@ $(document).ready(function(){
     });
 });
 </script>
-</body>
-</html>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>form</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="{% static 'savy.min.js' %}"></script>
+
+</head>
+<body>
+    <a href="{% url 'home' %}"><button type="button">HOME</button></a>
+    <a href="{% url 'forms_processing' %}"><button type="button">FORMS</button></a>
+    <a href="{% url 'model_forms_processing' %}"><button type="button">MODEL FORMS</button></a>
+
+    {% block body_ %}{% endblock %}
+
+    <script type="text/javascript">
+        $('input').savy('load');
+        $('button[type=submit]').click(function(event) {
+            $('input').savy('destroy');
+        });
+    </script>
+</body>
+</html>
